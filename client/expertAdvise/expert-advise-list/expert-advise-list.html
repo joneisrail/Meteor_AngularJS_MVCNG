@@ -1,0 +1,62 @@
+
+<div class="row h100">
+  
+    <div class="col-md-12 ma-parties-col">
+        <div class="row">
+            <div class="col-xs-8">
+                <form class="form-inline search-form">
+
+                    <div class="form-group">
+                        <label class="sr-only" for="search">Search</label>
+
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+                            <input type="text" ng-model="expertAdviseList.searchText" placeholder="Search" id="search" class="form-control">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="col-xs-4 ma-add-button-container">
+                <button ng-show="expertAdviseList.isLoggedIn" class="btn" ng-click="expertAdviseList.openAddNewExpertAdviseodal()">
+                    <i class="fa fa-plus"></i></button>
+            </div>
+        </div>
+
+        <ul class="list-group">
+            <li pagination-id="expertAdviseListPg" dir-paginate="expertAdvise in expertAdviseList.expertAdvises | itemsPerPage: expertAdviseList.perPage" total-items="expertAdviseList.expertAdviseCount" class="list-group-item ma-party-item">
+                <i class="ma-remove fa fa-times" ng-click="expertAdviseList.removeExpertAdvise(expertAdvise)"
+                   ng-show="expertAdviseList.isLoggedIn && expertAdvise.owner == expertAdviseList.currentUserId"></i>
+
+                <div class="row">
+                    <div class="col-sm-11">
+                        <h3 class="ma-party-name"><a href="/expertAdvise/{{expertAdvise._id}}">{{expertAdvise.heading}}</a></h3>
+
+                        <p class="ma-party-description">{{expertAdvise.summary}}</p>
+
+                        <p class="ma-party-description">{{expertAdvise.detail}}</p>
+                    </div>
+                </div>
+                <div class="row ma-party-item-bottom">
+                    <div class="col-sm-4 ma-posted-by-col">
+                        <span class="ma-posted-by">Posted by : {{ expertAdviseList.getExpertAdviceCreator(expertAdvise) | displayName }}  </span>
+
+                    </div>
+                    <div class="col-sm-4 ma-posted-by-col">
+                        <span class="ma-posted-by">Expert Detail : {{expertAdvise.expertDetail}} </span>
+                    </div>
+                    <div class="col-sm-4">
+                        <div ng-show="expertAdviseList.isLoggedIn && expertAdvise.owner == expertAdviseList.currentUserId">
+                            Public :  <input type="checkbox" ng-model="expertAdvise.Public">
+                            <button class="btn btn-primary" ng-click="expertAdviseList.updateExpertAdvise(expertAdvise)">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <dir-pagination-controls on-page-change="expertAdviseList.pageChanged(newPageNumber)" pagination-id="expertAdviseListPg"></dir-pagination-controls>
+    </div>
+
+</div>

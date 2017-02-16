@@ -1,0 +1,70 @@
+<div class="container-fluid ma-add-new-job-container">
+    <div class="alert alert-info" ng-hide="addNewPromoteModal.isLoggedIn">
+        Please log in to create a New Expert advise!
+    </div>
+
+    <form ng-show="addNewPromoteModal.isLoggedIn">
+        <h2>Create a new Expert's Advise</h2>
+
+        <div class="form-group">
+            <label for="nameInput">Heading</label>
+            <input ng-model="addNewPromoteModal.newPromote.heading" id="nameInput" type="text" class="form-control">
+        </div>
+         <div class="form-group">
+            <label for="promoteDetail">Promote Detail</label>
+            <input ng-model="addNewPromoteModal.newPromote.promoteDetail" id="promoteDetail" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="companyName">Company Name</label>
+            <input ng-model="addNewPromoteModal.newPromote.companyName" id="companyName" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="detail">Detail</label>
+            <textarea ng-model="addNewPromoteModal.newPromote.detail " id="detail" type="text" class="form-control"></textarea>
+        </div>    
+       
+        <div class="form-group">
+            <label for="url">URL</label>
+            <input ng-model="addNewPromoteModal.newPromote.url" id="url" type="text" class="form-control">
+        </div>
+        <div>
+            <md-whiteframe class="md-whiteframe-z1" layout="column">
+              <div layout="row" class="images-container-title">
+                <div flex>
+                  <h3>Add logo to your profile!</h3>
+                    <div ng-hide="addNewPromoteModal.cropImgSrc" ngf-drop ngf-select
+                         ngf-change="addNewPromoteModal.addImages($files)"
+                         ngf-drag-over-class="{accept:'dragover', reject:'dragover-err', delay:100}" class="drop-box"
+                         ngf-multiple="false" ngf-allow-dir="false" ngf-accept="'image/*'"
+                         ngf-drop-available="true">
+                      <div>Click here to select image</div>
+                      <div>
+                        <strong>OR</strong>
+                      </div>
+                      You can also drop image to here
+                    </div>
+
+                    <div ng-show="addNewPromoteModal.cropImgSrc" class="ng-crop-container">
+                     <h3>Great! Now edit & crop your image...</h3>
+                     <button type="button" ng-click="addNewPromoteModal.saveCroppedImage()" class="md-primary">
+                       Save Image
+                     </button>
+                     <img-crop image="addNewPromoteModal.cropImgSrc" result-image="addNewPromoteModal.myCroppedImage" area-type="square"></img-crop>
+                    </div>
+              </div>
+            </div>
+               <br />
+                <div layout="row" class="images-container-title">
+                 <div class="party-image-container" ng-if="addNewPromoteModal.newEmployer.images && addNewPromoteModal.newEmployer.images !==null">
+                 <img ng-src="{{ addNewEmployer.getMainImage(addNewPromoteModal.newEmployer.images) }}"/><br/>
+                 <button ng-click="addNewEmployer.DeleteImage(addNewPromoteModal.newEmployer.images)" class="btn btn-primary">Delete image</button>
+                </div>
+
+                  </div>
+            </md-whiteframe>
+
+        </div>
+
+        <button ng-click="addNewPromoteModal.addNewPromote()" class="btn">Add Promote</button>
+    </form>
+</div>

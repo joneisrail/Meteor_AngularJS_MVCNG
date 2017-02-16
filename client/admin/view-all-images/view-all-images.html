@@ -1,0 +1,16 @@
+
+<div class="row h100">
+
+    <div class="row">
+        <div class="page-header">
+          <h1>Image List</h1>
+        </div>
+        <div class="col-xs-6 col-md-3" ng-repeat="image in imageList.images">
+            <a href="#" class="thumbnail">
+              <img ng-src="{{ imageList.getMainImage(image) }}" alt="...">
+            </a>
+
+           imag: <img ng-src="{{ image.url() }}" alt="...">
+        </div>  
+    </div>  
+</div>

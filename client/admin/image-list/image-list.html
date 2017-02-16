@@ -1,0 +1,33 @@
+
+<div class="row h100">
+  
+    <div class="col-md-12 ma-parties-col">
+            <div class="panel panel-info">
+                <div class="panel-heading">Images</div>
+                <div class="panel-body">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="imageList">
+                        <ul class="hot-joblist" >
+                            <li ng-repeat="jobSeeker in imageList.jobSeek" >
+                              
+                             <div style="width: 120px;
+                                    height: 120px;
+                                    background-image: url('{{imageList.getMainImage(jobSeeker.images)}}');
+                                    background-size: 100% 100%;
+                                    border: 1px solid red;
+                                    float:inherit;
+                                    margin:10px;
+                                    ">
+                            </div>
+                            <div style="float: none; width:140px;"> {{jobSeeker.name}} </div>
+                              
+                            </li>
+                        </ul>
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+  </div>
+</div>

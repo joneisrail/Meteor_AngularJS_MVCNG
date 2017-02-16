@@ -1,0 +1,37 @@
+<div class="container-fluid ma-add-new-job-container">
+    <div class="alert alert-info" ng-hide="trainingDetailModal.isLoggedIn">
+        Please log in to view detail training!
+    </div>
+    <div ng-show="trainingDetailModal.isLoggedIn" class="panel panel-primary">
+            <div class="panel-heading">Training Detail</div>
+            <div class="panel-body">
+<!-- 
+        <ul class="list-group">
+            <li class="list-group-item ma-party-item">  -->            
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3 class="ma-party-name">{{trainingDetailModal.training.heading}}</h3>
+                         <p class=" ma-posted-by text-right">
+                            Date/Duration : {{trainingDetailModal.training.date}}
+                            </p>
+                        <p class="ma-party-description">{{trainingDetailModal.training.summary}}</p>
+                        
+                        <p class="ma-party-description">{{trainingDetailModal.training.detail}}</p>
+
+                          <p class=" ma-posted-by text-right">
+                            Posted by <br>
+                            {{trainingDetailModal.training.trainer}}
+                            </p>
+                    </div>
+                        <div>
+                          
+                        </div>
+
+                </div>                
+          <!--   </li>
+        </ul> -->
+    </div>
+ </div>
+<button ng-click="trainingDetailModal.close()" class="btn">Close</button>
+    
+</div>

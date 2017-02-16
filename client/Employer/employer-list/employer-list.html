@@ -1,0 +1,89 @@
+
+<div class="row h100">
+
+    <div class="col-md-12 ma-parties-col">
+        <div class="row">
+<!-- <div class="alert alert-warning alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Warning!</strong> Update successfully.
+</div> -->
+
+            <div class="col-xs-8">
+                <form class="form-inline search-form">
+
+                    <div class="form-group">
+                        <label class="sr-only" for="search">Search</label>
+
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+                            <input type="text" ng-model="employerList.searchText" placeholder="Search" id="search"
+                                   class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="sort-order">Sort Order</label>
+                        <select ng-model="employerList.orderProperty" ng-change="employerList.updateSort()">
+                            <option value="1">Ascending</option>
+                            <option value="-1">Descending</option>
+                        </select>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="col-xs-4 ma-add-button-container">
+                <button ng-show="employerList.isLoggedIn" class="btn" ng-click="employerList.openAddNewEmployerModal()">
+                    <i class="fa fa-plus"></i></button>
+            </div>
+        </div>
+
+        <ul class="list-group">
+            <li pagination-id="empPg" dir-paginate="employer in employerList.employers | itemsPerPage: employerList.perPage"
+                total-items="employerList.employerCount" class="list-group-item ma-party-item">
+               
+                <div class="row">
+                    <div class="col-sm-12">
+                    <div class="media">
+                      <div class="media-left">
+                        <a href="#">
+                          <img class="media-object empImg" src="{{employerList.getMainImage(employer.images)}}" alt="...">
+                        </a>
+                      </div>
+                      <div class="media-body">
+                            
+                        <div class="col-sm-4">
+                            <h4 class="media-heading"><a href="/employer/{{employer._id}}">{{employer.companyName}}</a></h4>
+                            <label>Contact Person : </label> {{employer.contactPerson}}<br>
+                            <label>HR Mail : </label> {{employer.hrMail}}<br>
+                            <label>Phone Number : </label> {{employer.phoneNumber}}<br>
+                            <label>Company Email : </label> {{employer.companyEmail}}<br>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label>Address : </label> {{employer.Address}}<br>
+                            <label>District : </label> {{employer.district}}<br>
+                            <label>Post Code : </label>{{employer.postCode}}<br>
+                            <label>Owner : </label>{{employerList.getEmployerCreator(employer)|displayName}}<br>
+                        </div>
+
+                        <div class="col-sm-4">
+                           
+                            <label>Show in home page  : </label> <input type="checkbox" ng-model="employer.isHomePage"><br>
+                            <label>Enable to CV Search : </label>  <input type="checkbox" ng-model="employer.isAbleCVSearch"><br>
+                            <button class="btn btn-primary" ng-click="employerList.EmployerUpdate(employer)">Update</button>
+                          
+                        </div>
+                      </div>
+                    </div>
+                     <i class="ma-remove fa fa-times" ng-click="employerList.removeEmployer(employer)"></i>
+
+</div>
+                </div>
+                
+            </li>
+        </ul>
+     
+        <dir-pagination-controls pagination-id="empPg" on-page-change="employerList.pageChanged(newPageNumber)"></dir-pagination-controls>
+    </div>
+
+</div>

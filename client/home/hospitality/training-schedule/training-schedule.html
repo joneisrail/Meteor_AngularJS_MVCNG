@@ -1,0 +1,65 @@
+
+<div class="row h100">
+ <div class="col-md-2 h100">
+    </div>
+    <div class="col-md-8 ma-parties-col">
+        <div class="row">
+            <div class="col-xs-8">
+                <form class="form-inline search-form">
+
+                    <div class="form-group">
+                        <label class="sr-only" for="search">Search</label>
+
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+                            <input type="text" ng-model="trainingSchedule.searchText" placeholder="Search" id="search" class="form-control">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+           
+        </div>
+  <div class="panel panel-primary">
+            <div class="panel-heading">Training Schedule</div>
+            <div class="panel-body">
+
+        <ul class="list-group">
+            <li ng-repeat="training in trainingSchedule.trainings" class="list-group-item ma-party-item" ng-click="trainingSchedule.openAddNewTrainingModal(training._id)">
+                <!-- <div style="float:right;">
+<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-mobile-iframe="true"></div>
+            </div> -->
+                <div class="row" style="cursor: pointer;">
+                    <div class="col-sm-11">
+                        <h2 class="ma-party-name">{{training.heading}}</h2>
+
+                        <p class="ma-party-description">{{training.summary}}</p>
+
+                    </div>
+                </div>
+                <div class="row ma-party-item-bottom">
+                    <div class="col-sm-4 ma-posted-by-col">
+                        <span class="ma-posted-by">Train by : {{training.trainer}}  </span>
+
+                    </div>
+                    <div class="col-sm-4 ma-posted-by-col">
+                        <span class="ma-posted-by">Date : {{training.date}} </span>
+                    </div>
+                    <div class="col-sm-4">
+                        
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="panel-footer">
+    </div>
+    </div>
+
+    </div>
+<div class="col-md-2 h100">
+    </div>
+</div>
+
+<div ng-include="'client/home/footer/foot-template.html'"></div>

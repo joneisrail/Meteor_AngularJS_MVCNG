@@ -1,0 +1,64 @@
+
+<div class="row h100">
+  
+    <div class="col-md-12 ma-parties-col">
+        <div class="row">
+            <div class="col-xs-8">
+                <form class="form-inline search-form">
+
+                    <div class="form-group">
+                        <label class="sr-only" for="search">Search</label>
+
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+                            <input type="text" ng-model="jobList.searchInput" placeholder="Search" id="search" class="form-control">
+                            <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" ng-click="jobList.updateSearch()">Go!</button></span>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="col-xs-4 ma-add-button-container">
+                <button ng-show="jobList.isLoggedIn" class="btn" ng-click="jobList.openAddNewJobModal()">
+                    <i class="fa fa-plus"></i></button>
+            </div>
+        </div>
+
+        <ul class="list-group">
+            <li dir-paginate="job in jobList.jobs | itemsPerPage: jobList.perPage"
+                total-items="jobList.jobCount" class="list-group-item ma-party-item">
+                <i class="ma-remove fa fa-times" ng-click="jobList.removeJob(job)"
+                   ng-show="jobList.isLoggedIn && job.owner == jobList.currentUserId"></i>
+
+                <div class="row">
+                    <div class="col-sm-8">
+                        <h2 class="ma-party-name"><a href="/jobs/{{job._id}}">{{job.jobTitle}}</a></h2>
+
+                        <p class="ma-party-description">{{job.education}}</p>
+
+                        <p class="ma-party-description">{{job.experience}}</p>
+                    </div>
+                </div>
+                <div class="row ma-party-item-bottom">
+                    <div class="col-sm-4 ma-posted-by-col">
+                        <span class="ma-posted-by">Posted by {{ jobList.getJobCreator(job).emails[0].address}}  </span>
+
+                    </div>
+                    <div class="col-sm-4 ma-posted-by-col">
+                        <span class="ma-posted-by">No. of  Vacancies {{job.noOfVacancies}} </span>
+                    </div>
+                    <div class="col-sm-4">
+                        <div >
+                            Deadline: {{job.deadline}}
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <dir-pagination-controls on-page-change="jobList.pageChanged(newPageNumber)"></dir-pagination-controls>
+    </div>
+
+</div>

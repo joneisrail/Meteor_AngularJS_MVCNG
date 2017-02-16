@@ -1,0 +1,37 @@
+<div class="container-fluid ma-add-new-job-container">
+    <div class="alert alert-info" ng-hide="addNewExpertAdviseModal.isLoggedIn">
+        Please log in to create a New Expert advise!
+    </div>
+
+    <form ng-show="addNewExpertAdviseModal.isLoggedIn">
+        <h2>Create a new Expert's Advise</h2>
+
+        <div class="form-group">
+            <label for="nameInput">Heading</label>
+            <input ng-model="addNewExpertAdviseModal.newExpertAdvise.heading" id="nameInput" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="imageUrl">Image URL</label>
+            <input ng-model="addNewExpertAdviseModal.newExpertAdvise.imageUrl" id="imageUrl" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="detail">Detail</label>
+            <textarea ng-model="addNewExpertAdviseModal.newExpertAdvise.detail " id="detail" type="text" class="form-control"></textarea>
+        </div>    
+       
+        <div class="form-group">
+            <label for="summary">Summary</label>
+            <input ng-model="addNewExpertAdviseModal.newExpertAdvise.summary" id="summary" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="expertDetail">Expert Detail</label>
+            <input ng-model="addNewExpertAdviseModal.newExpertAdvise.expertDetail" id="expertDetail" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="url">URL</label>
+            <input ng-model="addNewExpertAdviseModal.newExpertAdvise.url" id="url" type="text" class="form-control">
+        </div>
+
+        <button ng-click="addNewExpertAdviseModal.addNewExpertAdvise()" class="btn">Add Expert't Advise</button>
+    </form>
+</div>

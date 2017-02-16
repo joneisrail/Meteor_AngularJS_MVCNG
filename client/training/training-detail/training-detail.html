@@ -1,0 +1,36 @@
+<div class="row ma-party-details-container">
+    <div class="col-sm-6 col-sm-offset-3">
+        <legend>
+            View and Edit Your Training Detail:
+        </legend>
+        <form class="form-horizontal">
+
+            <div class="form-group">
+                <label>Heading</label>
+                <input ng-model="trainingDetail.training.heading" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label >Date</label>
+                <input ng-model="trainingDetail.training.date" type="text" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Trainer Detail</label>
+                <input ng-model="trainingDetail.training.trainer" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Summary</label>
+                <input ng-model="trainingDetail.training.summary" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Detail</label>
+                <textarea ng-model="trainingDetail.training.detail " type="text" class="form-control"></textarea> 
+            </div>
+
+            <div class="form-group" ng-show="trainingDetail.training.owner == trainingDetail.currentUserId">
+                <button ng-click="trainingDetail.trainingUpdate()" class="btn btn-primary">Update</button>
+            </div>
+        </form>
+
+    </div>
+</div>

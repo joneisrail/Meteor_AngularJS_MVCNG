@@ -1,0 +1,238 @@
+<div id="profilePDF" border="0" cellpadding="0" cellspacing="0" align="center" bgcolor="" >
+<table width="600">
+  <caption>Power by BDHotelJobs.com</caption>
+  <tbody>
+    <tr>
+      <td>
+        <h4>{{jobSeekerDetail.jobSeeker.name}}</h4><br>
+        Address : {{jobSeekerDetail.jobSeeker.presentAddress}}<br>
+        Office Phone : {{jobSeekerDetail.jobSeeker.officePhone}}<br>
+        Mobile : {{jobSeekerDetail.jobSeeker.mobile}}<br>
+        e-mail : {{jobSeekerDetail.jobSeeker.email}}<br>
+      </td>
+      <td width="140" height="140" border="0" align="right" cellpadding="0" cellspacing="7" > <img src="{{jobSeekerDetail.getMainImage(jobSeekerDetail.jobSeeker.images)}}"></td>
+    </tr>     
+    <tr>
+      <th colspan=2>Career Objective :</th>      
+    </tr>
+     <tr>
+      <td colspan=2>{{jobSeekerDetail.jobSeeker.objective}}</td>      
+    </tr>
+    <tr></tr>
+    <tr>
+      <th colspan=2>Career Summary :</th>      
+    </tr>
+     <tr>
+      <td colspan=2>{{jobSeekerDetail.jobSeeker.careerSummary}}</td>      
+    </tr>
+    <tr></tr>
+    <tr>
+      <th colspan=2>Special Qualification :</th>      
+    </tr>
+     <tr>
+      <td colspan=2>{{jobSeekerDetail.jobSeeker.specialQalification}}</td>      
+    </tr>
+    <tr></tr>
+    <tr>
+        <th colspan=2>Employment History :</th>
+    </tr>
+    <tr>
+        <td colspan="2"><b>Total Year of Experience :</b> {{jobSeekerDetail.jobSeeker.keyword}}</td>
+    </tr>
+    <tr ng-hide="jobSeekerDetail.jobSeeker.experience.length>0"> <th>Fresher</th></tr>
+    <tr ng-repeat="experience in jobSeekerDetail.jobSeeker.experience">
+        <td colspan="2">
+            <b>{{experience.companyName}}</b><br>
+            {{experience.position}}<br>
+            {{experience.fromDate}} to {{experience.toDate}}<br>
+            Duties/Responsibilities : <br>
+            {{experience.responsibility}}
+        </td>
+    </tr>
+    
+    <tr>
+        <th colspan="2">Academic Qualification :</th>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <table class="table">
+            <thead>
+            <tr>
+                <th>Degree</th>
+                <th>Institute Name</th>
+                <th>Result</th>
+                <th>Year</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="qualification in jobSeekerDetail.jobSeeker.qualification">
+                <td>{{qualification.degreeTitle}}</td>
+                <td>{{qualification.instituteName}}</td>
+                <td>{{qualification.result}}</td>
+                <td>{{qualification.passingYear}}</td>               
+            </tr>
+            </tbody>
+        </table>
+        </td>
+    </tr>
+    <tr>
+      <th colspan="2">Training Summary :</th>      
+    </tr>
+     <tr>
+      <td colspan="2">{{jobSeekerDetail.jobSeeker.trainingSummary}}</td>      
+    </tr>
+    <tr></tr>
+    <tr>
+      <th colspan="2">Professional Qualification :</th>      
+    </tr>
+     <tr>
+      <td colspan="2">{{jobSeekerDetail.jobSeeker.professionalSummary}}</td>      
+    </tr>
+    <tr></tr>
+    <tr>
+      <th colspan="2">Career and Application Information: :</th>      
+    </tr>
+     <tr>
+      <td colspan="2">
+        <table>
+            <tr>
+                <td>Looking For</td>
+                <td>: {{jobSeekerDetail.jobSeeker.lookingFor}}</td>
+            </tr>
+            <tr>
+                <td>Available For</td>
+                <td>: {{jobSeekerDetail.jobSeeker.availableFor}} Month</td>
+            </tr>
+            <tr>
+                <td>Present Salary</td>
+                <td>: {{jobSeekerDetail.jobSeeker.presentSalary}}</td>
+            </tr>
+            <tr>
+                <td>Expected Salary</td>
+                <td>: {{jobSeekerDetail.jobSeeker.expectedSalary}}</td>
+            </tr>
+            <tr>
+                <td>Preferred Job </td>
+                <td>: {{jobSeekerDetail.jobSeeker.jobCategory}}</td>
+            </tr>
+            <tr>
+                <td>Preferred Location</td>
+                <td>: {{jobSeekerDetail.jobSeeker.jobLocation}}</td>
+            </tr>
+        </table>
+      </td>      
+    </tr>
+    <tr>
+        <th>Language Proficiency :</th>
+    </tr>
+    <tr>
+        <td colspan="2">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Language</th>
+                <th>Reading</th>
+                <th>Writing</th>
+                <th>Speaking</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="language in jobSeekerDetail.jobSeeker.languages">
+                <td>{{language.language}}</td>
+                <td>{{language.reading}}</td>
+                <td>{{language.writing}}</td>
+                <td>{{language.speaking}}</td>                               
+            </tr>
+            </tbody>
+        </table>
+        </td>
+    </tr>
+    <tr>
+        <th>Personal Details : </th>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <table>
+            <tr>
+                <td>Father's Name</td>
+                <td>: {{jobSeekerDetail.jobSeeker.fatherName}}</td>
+            </tr>
+            <tr>
+                <td>Mother's Name</td>
+                <td>: {{jobSeekerDetail.jobSeeker.motherName}}</td>
+            </tr>
+            <tr>
+                <td>Date of Birth</td>
+                <td>: {{jobSeekerDetail.jobSeeker.dateOfBirth}}</td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>: {{jobSeekerDetail.jobSeeker.gender}}</td>
+            </tr>
+            <tr>
+                <td>Marital Status </td>
+                <td>: {{jobSeekerDetail.jobSeeker.maritalStatus}}</td>
+            </tr>
+            <tr>
+                <td>Nationality</td>
+                <td>: {{jobSeekerDetail.jobSeeker.nationality}}</td>
+            </tr>
+            <tr>
+                <td>National ID</td>
+                <td>: {{jobSeekerDetail.jobSeeker.nationaId}}</td>
+            </tr>
+            <tr>
+                <td>Religion</td>
+                <td>: {{jobSeekerDetail.jobSeeker.religion}}</td>
+            </tr>
+            <tr>
+                <td>Permanent Address</td>
+                <td>: {{jobSeekerDetail.jobSeeker.presentAddrss}}</td>
+            </tr>
+            <tr>
+                <td>Current Location</td>
+                <td>: {{jobSeekerDetail.jobSeeker.currentLocation}}</td>
+            </tr>
+
+        </table>
+      </td>      
+    </tr>
+    <tr>
+        <th>Reference (s)</th>
+    </tr>
+    <tr>
+        <td>
+            <table>
+                <tr><td>{{jobSeekerDetail.jobSeeker.reference[0].refName}}</td></tr>
+                <tr><td>{{jobSeekerDetail.jobSeeker.reference[0].refCompany}}</td></tr>
+                <tr><td>{{jobSeekerDetail.jobSeeker.reference[0].refDesignation}}</td></tr>
+                <tr><td>{{jobSeekerDetail.jobSeeker.reference[0].refMobile}}</td></tr>
+                <tr><td>{{jobSeekerDetail.jobSeeker.reference[0].refAddress}}</td></tr>
+            </table>    
+        </td>
+
+        <td>
+            <table>
+                <tr><td>{{jobSeekerDetail.jobSeeker.reference[1].refName}}</td></tr>
+                <tr><td>{{jobSeekerDetail.jobSeeker.reference[1].refCompany}}</td></tr>
+                <tr><td>{{jobSeekerDetail.jobSeeker.reference[1].refDesignation}}</td></tr>
+                <tr><td>{{jobSeekerDetail.jobSeeker.reference[1].refMobile}}</td></tr>
+                <tr><td>{{jobSeekerDetail.jobSeeker.reference[1].refAddress}}</td></tr>
+            </table>    
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            -- BDHotelJobs.com --
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <button class="btn btn-primary" onClick="window.print()">Print or Save as PDF</button>
+        </td>
+    </tr>
+  </tbody>
+</table>
+<div class="ma-parties-col"></div>
+</div>

@@ -1,0 +1,93 @@
+<div class="container-fluid ma-add-new-job-container">
+    <div class="alert alert-info" ng-hide="addNewJobModal.isLoggedIn">
+        Please log in to create a job circular!
+    </div>
+
+    <form ng-show="addNewJobModal.isLoggedIn">
+        <h2>Create a new job circular</h2>
+
+        <div class="form-group">
+            <label for="companyInput">Company Name</label>
+            <input ng-model="addNewJobModal.newJob.companyName" id="companyInput" type="text" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="nameInput">Job Title</label>
+            <input ng-model="addNewJobModal.newJob.jobTitle" id="nameInput" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="noOfVacancies">No. of  Vacancies</label>
+            <input ng-model="addNewJobModal.newJob.noOfVacancies" id="noOfVacancies" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="jobDescription">Job description</label>
+            <textarea ng-model="addNewJobModal.newJob.jobDescription " id="jobDescription" type="text" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="education">Education</label>
+            <input ng-model="addNewJobModal.newJob.education" id="education" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="experience">Experience</label>
+            <input ng-model="addNewJobModal.newJob.experience" id="experience" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Job Category</label>
+            <select class="form-control" ng-model="addNewJobModal.newJob.jobCategory">
+                <option value="1">Management Position</option>
+                <option value="2">Front Office</option>
+                <option value="3">Food & Beverage Production</option>
+                <option value="4">Food & Beverage Service</option>
+                <option value="5">Sales & Marketing</option>
+                <option value="6">Housekeeping</option>
+                <option value="7">Safety & Security</option>
+                <option value="8">HR & Admin</option>
+                <option value="9">Accounts</option>
+                <option value="10">Purchase & Store </option>
+                <option value="11">Engineereing & Maintenance</option>
+                <option value="12">Airline & Tourism</option>
+                <option value="13">Foreign Jobs</option>
+                <option value="14">Others</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Job level</label>
+            <select class="form-control" ng-model="addNewJobModal.newJob.jobLevel">
+                <option value="1">Entry level</option>
+                <option value="2">Mid level</option>
+                <option value="3">Management</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Type of job</label>
+            <select class="form-control" ng-model="addNewJobModal.newJob.jobType">
+            <option value="1">Full Time</option>
+            <option value="2">Casual</option>
+            <option value="3">Internship</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="location">Job Location</label>
+            <input ng-model="addNewJobModal.newJob.jobLocation" id="location" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="benefit">Benefit</label>
+            <textarea ng-model="addNewJobModal.newJob.benefit" id="benefit" type="text" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="salary">Salary</label>
+            <input ng-model="addNewJobModal.newJob.salary" id="Salary" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="deadline">Application deadline</label>
+            <input ng-model="addNewJobModal.newJob.deadline" id="deadline" type="text" class="form-control">
+        </div>
+         <div class="form-group">
+            <label for="cvMail">CV Receving e-mail</label>
+            <input ng-model="addNewJobModal.newJob.cvMail" id="cvMail" type="text" class="form-control">
+        </div>        
+
+        <button ng-click="addNewJobModal.addNewJob()" class="btn">Add Job Circular</button>
+    </form>
+</div>

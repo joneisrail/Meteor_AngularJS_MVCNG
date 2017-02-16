@@ -1,0 +1,39 @@
+<div class="row ma-party-details-container">
+    <div class="col-sm-6 col-sm-offset-3">
+        <legend>
+            View and Edit Your Expert's Advise:
+        </legend>
+        <form class="form-horizontal">
+
+            <div class="form-group">
+                <label>Heading</label>
+                <input ng-model="expertAdviseDetail.expertAdvise.heading" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Image URL</label>
+                <input ng-model="expertAdviseDetail.expertAdvise.imageUrl" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Detail</label>
+                <textarea ng-model="expertAdviseDetail.expertAdvise.detail " type="text" class="form-control"></textarea> 
+            </div>
+            <div class="form-group">
+                <label>Summary</label>
+                <input ng-model="expertAdviseDetail.expertAdvise.summary" type="text" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Expert's Detail</label>
+                <input ng-model="expertAdviseDetail.expertAdvise.expertDetail" type="text" class="form-control">
+            </div>
+             <div class="form-group">
+                <label>URL</label>
+                <input ng-model="expertAdviseDetail.expertAdvise.url" type="text" class="form-control">
+            </div>
+            <div class="form-group" ng-show="expertAdviseDetail.expertAdvise.owner == expertAdviseDetail.currentUserId">
+                <button ng-click="expertAdviseDetail.expertAdviseUpdate()" class="btn btn-primary">Update</button>
+            </div>
+        </form>
+
+    </div>
+</div>

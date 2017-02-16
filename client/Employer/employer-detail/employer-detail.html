@@ -1,0 +1,107 @@
+<div class="row ma-party-details-container">
+    <div class="col-sm-6 col-sm-offset-3">
+        <legend>
+            Employer Profile
+        </legend>
+        <form class="form-horizontal">
+      
+        <div class="form-group">
+            <label for="nameInput">Company Name</label>
+            <input ng-model="employerDetail.employer.companyName" id="nameInput" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Company Information</label>
+            <input ng-model="employerDetail.employer.companyInformation" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Address</label>
+            <input ng-model="employerDetail.employer.address" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="district">District</label>
+            <input ng-model="employerDetail.employer.district" id="district" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="postCode">Post Code</label>
+            <input ng-model="employerDetail.employer.postCode" id="postCode" type="text" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Category</label>
+            <label class="checkbox-inline" ng-repeat="(cat,enabled) in employerDetail.companyCategory">
+
+                <input type="checkbox" ng-model="employerDetail.employer.companyCategory[cat]"> {{cat}}
+            </label>
+
+        </div>
+
+        <div class="form-group">
+            <label for="hrMail">Hr Mail</label>
+            <input ng-model="employerDetail.employer.hrMail" id="hrMail" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="contactPerson">Contact Person</label>
+            <input ng-model="employerDetail.employer.contactPerson" id="contactPerson" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="designation">Designation</label>
+            <input ng-model="employerDetail.employer.designation" id="designation" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number</label>
+            <input ng-model="employerDetail.employer.phoneNumber" id="phoneNumber" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="companyWebUrl">Web address (URL)</label>
+            <input ng-model="employerDetail.employer.companyWebUrl" id="companyWebUrl" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="companyEmail">Company Email</label>
+            <input ng-model="employerDetail.employer.companyEmail" id="companyEmail" type="text" class="form-control">
+        </div>
+
+        <div class="form-group">
+            
+            <md-whiteframe class="md-whiteframe-z1" layout="column">
+              <div layout="row" class="images-container-title">
+                <div flex>
+                  <h3>Add logo to your profile!</h3>
+                    <div ng-hide="employerDetail.cropImgSrc" ngf-drop ngf-select
+                         ngf-change="employerDetail.addImages($files)"
+                         ngf-drag-over-class="{accept:'dragover', reject:'dragover-err', delay:100}" class="drop-box"
+                         ngf-multiple="false" ngf-allow-dir="false" ngf-accept="'image/*'"
+                         ngf-drop-available="true">
+                      <div>Click here to select image</div>
+                      <div>
+                        <strong>OR</strong>
+                      </div>
+                      You can also drop image to here
+                    </div>
+                        <div ng-show="employerDetail.cropImgSrc" class="ng-crop-container">
+                         <h3>Great! Now edit & crop your image...</h3>
+                         <button type="button" ng-click="employerDetail.saveCroppedImage(employerDetail.employer._id)" ng-disabled="!employerDetail.cropImgSrc" class="md-primary">
+                           Save Image
+                         </button>
+                         <img-crop image="employerDetail.cropImgSrc" result-image="employerDetail.myCroppedImage" area-type="square"></img-crop>
+                        </div>
+                      </div>
+                    </div>
+                   <br />
+                  
+            </md-whiteframe>
+        </div>
+            <div layout="row" class="images-container-title">
+             <div class="party-image-container" ng-if="employerDetail.employer.images && employerDetail.employer.images.length > 0">
+             <img ng-src="{{ employerDetail.getMainImage(employerDetail.employer.images) }}"/><br/>
+             <button ng-click="employerDetail.DeleteImage(employerDetail.employer.images,employerDetail.employer._id)" class="btn btn-primary">Delete image</button>
+            </div>
+
+          </div>
+
+           
+        <button ng-click="employerDetail.EmployerUpdate()" class="btn btn-primary">Update</button>
+
+    </form>
+
+    </div>
+</div>

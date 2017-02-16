@@ -1,0 +1,93 @@
+<div class="row ma-party-details-container">
+    <div class="col-sm-6 col-sm-offset-3">
+        <legend>
+            View and Edit Your job Details:
+        </legend>
+        <form class="form-horizontal">
+            {{jobEdit.job}}
+            id: {{jobEdit.ids}}
+            <div class="form-group">
+                <label>Job Title</label>
+                <input ng-model="jobEdit.job.jobTitle" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label >No. of  Vacancies</label>
+                <input ng-model="jobEdit.job.noOfVacancies" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Job description</label>                
+                <textarea ng-model="jobEdit.job.jobDescription " type="text" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Education</label>
+                <input ng-model="jobEdit.job.education" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Experience</label>
+                <input ng-model="jobEdit.job.experience" type="text" class="form-control">
+            </div>
+            
+            <div class="form-group">
+            <label>Type of job</label>
+            <select class="form-control" ng-model="jobEdit.job.jobCategory">
+                <option value="1">Management Position</option>
+                <option value="2">Front Office</option>
+                <option value="3">Food & Beverage Production</option>
+                <option value="4">Food & Beverage Service</option>
+                <option value="5">Sales & Marketing</option>
+                <option value="6">Housekeeping</option>
+                <option value="7">Safety & Security</option>
+                <option value="8">HR & Admin</option>
+                <option value="9">Accounts</option>
+                <option value="10">Purchase & Store </option>
+                <option value="11">Engineereing & Maintenance</option>
+                <option value="12">Airline & Tourism</option>
+                <option value="13">Foreign Jobs</option>
+                <option value="14">Others</option>
+            </select>
+            </div>
+
+            <div class="form-group">
+                <label>Job level</label>
+                <select class="form-control" ng-model="jobEdit.job.jobLevel">
+                    <option value="1">Entry level</option>
+                    <option value="2">Mid level</option>
+                    <option value="3">Management</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Type of job</label>
+                <select class="form-control" ng-model="jobEdit.job.jobType">
+                    <option value="1">Full Time</option>
+                    <option value="2">Casual</option>
+                    <option value="3">Internship</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label >Job Location</label>
+                <input ng-model="jobEdit.job.jobLocation" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Benefit</label>
+                <textarea ng-model="jobEdit.job.benefit" type="text" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Salary</label>
+                <input ng-model="jobEdit.job.salary" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Application deadline</label>
+                <input ng-model="jobEdit.job.deadline" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>CV Receving e-mail</label>
+                <input ng-model="jobEdit.job.cvMail" type="text" class="form-control">
+            </div>
+
+            <div class="form-group" ng-show="jobEdit.job.owner == jobEdit.currentUserId">
+                <button class="btn btn-primary">Save</button>
+            </div>
+        </form>
+
+    </div>
+</div>

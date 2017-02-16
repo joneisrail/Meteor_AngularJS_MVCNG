@@ -1,0 +1,62 @@
+
+<div class="row h100">
+  
+    <div class="col-md-12 ma-parties-col">
+        <div class="row">
+            <div class="col-xs-8">
+                <form class="form-inline search-form">
+
+                    <div class="form-group">
+                        <label class="sr-only" for="search">Search</label>
+
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+                            <input type="text" ng-model="trainingList.searchText" placeholder="Search" id="search" class="form-control">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="col-xs-4 ma-add-button-container">
+                <button ng-show="trainingList.isLoggedIn" class="btn" ng-click="trainingList.openAddNewTrainingModal()">
+                    <i class="fa fa-plus"></i></button>
+            </div>
+        </div>
+
+        <ul class="list-group">
+            <li pagination-id="trainingListPg" dir-paginate="training in trainingList.trainings | itemsPerPage: trainingList.perPage" total-items="trainingList.trainingCount" class="list-group-item ma-party-item">
+                <i class="ma-remove fa fa-times" ng-click="trainingList.removeTraining(training)"
+                   ></i>
+
+                <div class="row">
+                    <div class="col-sm-11">
+                        <h2 class="ma-party-name"><a href="/training/{{training._id}}">{{training.heading}}</a></h2>
+
+                        <p class="ma-party-description">{{training.summary}}</p>
+
+                        <p class="ma-party-description">{{training.detail}}</p>
+                    </div>
+                </div>
+                <div class="row ma-party-item-bottom">
+                    <div class="col-sm-4 ma-posted-by-col">
+                        <span class="ma-posted-by">Train by : {{ training.trainer }}  </span>
+
+                    </div>
+                    <div class="col-sm-4 ma-posted-by-col">
+                        <span class="ma-posted-by">Date : {{training.date}} </span>
+                    </div>
+                    <div class="col-sm-4">
+                        <div >
+                            Public :  <input type="checkbox" ng-model="training.Public">
+                            <button class="btn btn-primary" ng-click="trainingList.updateTraining(training)">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <dir-pagination-controls on-page-change="trainingList.pageChanged(newPageNumber)" pagination-id="trainingListPg"></dir-pagination-controls>
+    </div>
+
+</div>

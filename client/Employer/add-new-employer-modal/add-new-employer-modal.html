@@ -1,0 +1,108 @@
+<div class="container-fluid ma-add-new-party-container">
+    <div class="alert alert-info" ng-hide="addNewEmployerModal.isLoggedIn">
+        Please log in to create your profile!
+    </div>
+
+    <form ng-show="addNewEmployerModal.isLoggedIn">
+        <h2>Employer profile</h2>
+        <div class="form-group">
+            <label for="nameInput">Company Name</label>
+            <input ng-model="addNewEmployerModal.newEmployer.companyName" id="nameInput" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="companyInformation">Company Information</label>
+            <input ng-model="addNewEmployerModal.newEmployer.companyInformation" id="companyInformation" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input ng-model="addNewEmployerModal.newEmployer.address" id="address" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="district">District</label>
+            <input ng-model="addNewEmployerModal.newEmployer.district" id="district" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="postCode">Post Code</label>
+            <input ng-model="addNewEmployerModal.newEmployer.postCode" id="postCode" type="text" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Category</label>
+
+            <label class="checkbox-inline" ng-repeat="(cat,enabled) in addNewEmployerModal.companyCategory">
+                <input type="checkbox" ng-model="addNewEmployerModal.companyCategory[cat]"> {{cat}}
+            </label>
+
+        </div>
+
+        <div class="form-group">
+            <label for="hrMail">Hr Mail</label>
+            <input ng-model="addNewEmployerModal.newEmployer.hrMail" id="hrMail" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="contactPerson">Contact Person</label>
+            <input ng-model="addNewEmployerModal.newEmployer.contactPerson" id="contactPerson" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="designation">Designation</label>
+            <input ng-model="addNewEmployerModal.newEmployer.designation" id="designation" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number</label>
+            <input ng-model="addNewEmployerModal.newEmployer.phoneNumber" id="phoneNumber" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="companyWebUrl">Web address (URL)</label>
+            <input ng-model="addNewEmployerModal.newEmployer.companyWebUrl" id="companyWebUrl" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="companyEmail">Company Email</label>
+            <input ng-model="addNewEmployerModal.newEmployer.companyEmail" id="companyEmail" type="text" class="form-control">
+        </div>
+        <div>
+            <div>
+            <md-whiteframe class="md-whiteframe-z1" layout="column">
+              <div layout="row" class="images-container-title">
+                <div flex>
+                  <h3>Add logo to your profile!</h3>
+                    <div ng-hide="addNewEmployerModal.cropImgSrc" ngf-drop ngf-select
+                         ngf-change="addNewEmployerModal.addImages($files)"
+                         ngf-drag-over-class="{accept:'dragover', reject:'dragover-err', delay:100}" class="drop-box"
+                         ngf-multiple="false" ngf-allow-dir="false" ngf-accept="'image/*'"
+                         ngf-drop-available="true">
+                      <div>Click here to select image</div>
+                      <div>
+                        <strong>OR</strong>
+                      </div>
+                      You can also drop image to here
+                    </div>
+
+                    <div ng-show="addNewEmployerModal.cropImgSrc" class="ng-crop-container">
+                     <h3>Great! Now edit & crop your image...</h3>
+                     <button type="button" ng-click="addNewEmployerModal.saveCroppedImage()" class="md-primary">
+                       Save Image
+                     </button>
+                     <img-crop image="addNewEmployerModal.cropImgSrc" result-image="addNewEmployerModal.myCroppedImage" area-type="square"></img-crop>
+                    </div>
+              </div>
+            </div>
+               <br />
+                <div layout="row" class="images-container-title">
+                     <div class="party-image-container" ng-if="addNewEmployerModal.newEmployer.images && addNewEmployerModal.newEmployer.images !==null">
+                     <img ng-src="{{ addNewEmployer.getMainImage(addNewEmployerModal.newEmployer.images) }}"/><br/>
+                     <button ng-click="addNewEmployer.DeleteImage(addNewEmployerModal.newEmployer.images)" class="btn btn-primary">Delete image</button>
+                    </div>
+
+                  </div>
+            </md-whiteframe>
+
+        </div>
+
+        </div>
+         <div class="form-group">
+            <button ng-click="addNewEmployerModal.addNewEmployer()" class="btn">Save</button>
+         </div>
+
+        
+    </form>
+</div>

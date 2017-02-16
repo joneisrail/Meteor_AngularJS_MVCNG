@@ -1,0 +1,59 @@
+<div class="row h100" style="padding-top:10px;">
+    <div class="col-md-2 h100">
+    </div>
+
+    <div class="col-md-8" ma-parties-col>
+     
+      <div class="panel panel-info">
+            <div class="panel-heading">Sign in</div>
+            <div class="panel-body">
+
+                <form name="loginForm" class="form-horizontal">
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"> Email </label>
+                    <div class="col-sm-10">
+                      <input type="text" ng-model="login.credentials.email" placeholder="email" class="form-control" required/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"> Password </label>
+                    <div class="col-sm-10">
+                      <input type="password" placeholder="password" ng-model="login.credentials.password" class="form-control" required/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-10">
+                      <button type="submit" class="btn btn-primary" ng-click="login.login()" aria-label="login" ng-disabled="login.loginForm.$invalid()">Sign In
+                                          </button>
+                    </div>
+                    
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-10">
+                      <a class="md-button" href="/resetpw">Forgot password?</a><br>
+                      <a class="md-button" href="/register">Need an account?</a>
+                    
+                    </div>
+                    
+                  </div>
+                </form>
+                <div ng-show="login.error" class="md-warn" layout="row" layout-fill layout-padding layout-margin>
+                  <p class="md-body-1">{{ login.error }}</p>
+                </div>
+              
+            </div>
+    </div>
+
+    
+    </div>
+
+
+  <div class="col-md-2 h100">
+
+    </div>   
+
+</div>
+
+<div ng-include="'client/home/footer/foot-template.html'"></div>

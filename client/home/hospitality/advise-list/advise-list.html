@@ -1,0 +1,72 @@
+
+<div class="row h100">
+    <div class="col-md-2 h100">
+    </div>
+    <div class="col-md-8 ma-parties-col">
+        <div class="row">
+            <div class="col-xs-8">
+                <form class="form-inline search-form">
+
+                    <div class="form-group">
+                        <label class="sr-only" for="search">Search</label>
+
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+                            <input type="text" ng-model="adviseList.searchText" placeholder="Search" id="search"
+                                   class="form-control">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Expert's Advice</div>
+            <div class="panel-body">
+
+        <ul class="list-group">
+            <li ng-repeat="expertAdvise in adviseList.expertAdvises " class="list-group-item ma-party-item">   
+            <!-- <div style="float:right;">
+<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-mobile-iframe="true"></div>
+            </div>  -->         
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3 class="ma-party-name text-center">{{expertAdvise.heading}}</h3>
+                        <div style="width: 400px;
+                                    height: 200px;
+                                    background-image: url('{{expertAdvise.imageUrl}}');
+                                    background-size: 100% 100%;
+                                    border: 1px solid red;
+                                    float:inherit;
+                                    margin:10px;
+                                    ">
+                        </div>
+                        <p class="ma-party-description">{{expertAdvise.summary}}</p>
+                        
+                        <p class="ma-party-description">{{expertAdvise.detail}}</p>
+
+                          <p class=" ma-posted-by text-right">
+                            Posted by <br>
+                            {{expertAdvise.expertDetail}} <br>
+                            <a href="{{expertAdvise.url}}" target="_blank">Click here for details</a>
+                            </p>
+                    </div>
+                        <div>
+                          
+                        </div>
+
+                </div>                
+            </li>
+        </ul>
+    </div>
+    <div class="panel-footer">
+    </div>
+    </div>
+    </div>
+<div class="col-md-2 h100">
+    </div>
+</div>
+
+
+<div ng-include="'client/home/footer/foot-template.html'"></div>

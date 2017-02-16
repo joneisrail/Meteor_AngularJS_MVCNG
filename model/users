@@ -1,0 +1,6 @@
+Users = new Mongo.Collection('users');
+Users.allow({   
+    remove:function(){
+        return true;
+    }
+});

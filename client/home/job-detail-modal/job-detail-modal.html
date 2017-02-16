@@ -1,0 +1,37 @@
+<div class="container-fluid ma-add-new-job-container">    
+    <div class="panel panel-primary">
+        <!-- Default panel contents -->
+        <div class="panel-heading">{{jobDetailModal.job.companyName}} - Job Detail</div>
+       
+        <!-- List group -->
+        <ul class="list-group jobDetailLi">
+            <li class="list-group-item"><label>Job Title : </label>{{jobDetailModal.job.jobTitle}}</li>
+            <li class="list-group-item"> <label>No. of  Vacancies : </label> {{jobDetailModal.job.noOfVacancies}}</li>
+            <li class="list-group-item"><label>Experience : </label>{{jobDetailModal.job.experience}}</li>
+            <li class="list-group-item"><label>Education : </label>{{jobDetailModal.job.education}}</li>                        
+            <li class="list-group-item"><label>Job Level : </label>{{jobDetailModal.job.jobLevel | displayJobLevel}}</li>
+            <li class="list-group-item"><label>Job Type : </label>{{jobDetailModal.job.jobType | displayJobType}}</li>
+             <li class="list-group-item"><label>Job Category : </label>{{jobDetailModal.job.jobCategory | displayJobCategory}}</li>
+            <li class="list-group-item"><label>Job Location : </label>{{jobDetailModal.job.jobLocation}}</li>            
+            <li class="list-group-item"><label>Job Salary : </label>{{jobDetailModal.job.salary}}</li>
+            <li class="list-group-item"><label>Job Deadline : </label>{{jobDetailModal.job.deadline}}</li>
+            <li class="list-group-item"><label>Email : </label>{{jobDetailModal.job.cvMail}} </li>
+            <li class="list-group-item"><label>Job Description : </label>
+               <textarea class="destextarea">{{jobDetailModal.job.jobDescription}}</textarea>
+            </li>      
+            <li class="list-group-item"><label>Job Benefit : </label>
+                <textarea class="destextarea">{{jobDetailModal.job.benefit}}</textarea>
+            </li>    
+        </ul>
+            
+        <div class="panel-footer">
+            <label>Company Address : </label>{{jobDetailModal.employers.address}}
+        </div>
+    </div>
+    <div ng-show="!jobDetailModal.isLoggedIn">
+        Please <a href="http://www.bdhoteljobs.com/login">signin</a> or <a href="http://www.bdhoteljobs.com/register">signup</a> to apply.
+    </div>
+    <button class="btn btn-primary" ng-show="jobDetailModal.isLoggedIn" ng-click="jobDetailModal.apply()">Apply</button>
+    <button ng-click="jobDetailModal.close()" class="btn">Close</button>
+
+</div>

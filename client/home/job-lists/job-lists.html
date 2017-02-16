@@ -1,0 +1,173 @@
+
+<div class="row h100">
+    <div class="col-md-2 hidden-sm">
+    </div>
+    
+    <div class="col-md-8 col-sm-12 ma-parties-col">
+        <div class="row">
+            <div class="col-xs-12">
+                <form class="form-inline search-form">
+
+                    <div class="form-group">
+                        <label class="sr-only" for="search">Search</label>
+
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+                            <input type="text" ng-model="jobLists.searchInput" placeholder="Search by job title" id="search" class="form-control">
+                            <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" ng-click="jobLists.updateSearch()">Go!</button>
+                          </span>
+                        </div>
+                        <button ng-click="jobLists.searchAllJob()" class="btn btn-primary">ALL</button>
+                    </div>
+                    <div class="form-group">
+                        <label>Date</label>
+                        <select class="form-control" ng-model="jobLists.orderProperty" ng-change="jobLists.updateSort()">
+                            <option value="1">Oldest</option>
+                            <option value="-1">Most Recent</option>
+                        </select>
+                    </div>
+                     <div class="form-group">
+                        <!-- <label>Type</label> -->
+                        <select  class="form-control" ng-model="jobLists.jobType" ng-change="jobLists.searchByType()">
+                            <option value="0">Job Type</option>
+                            <option value="1">Full Time</option>
+                            <option value="2">Casual</option>
+                            <option value="3">Internship</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- <label>Type of job</label> -->
+                        <select  class="form-control" ng-model="jobLists.jobCategory" ng-change="jobLists.searchByjobCategory()">
+                            <option value="0">Job Category</option>
+                            <option value="1">Management Position</option>
+                            <option value="2">Front Office</option>
+                            <option value="3">Food & Beverage Production</option>
+                            <option value="4">Food & Beverage Service</option>
+                            <option value="5">Sales & Marketing</option>
+                            <option value="6">Housekeeping</option>
+                            <option value="7">Safety & Security</option>
+                            <option value="8">HR & Admin</option>
+                            <option value="9">Accounts</option>
+                            <option value="10">Purchase & Store </option>
+                            <option value="11">Engineereing & Maintenance</option>
+                            <option value="12">Airline & Tourism</option>
+                            <option value="13">Foreign Jobs</option>
+                            <option value="14">Others</option>
+                        </select>
+                    </div>
+
+                </form>
+            </div>
+           <!--  <div class="col-xs-1 ma-add-button-container">
+                 <div class="form-group">
+                        
+                        <div class="input-group">
+                          <select class="form-control" ng-model="viewAllJob.perPage">
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                        </select>
+                        </div>
+                    </div>
+            </div> -->
+
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Hot Jobs</h3>                 
+            </div>
+           
+            <div class="panel-body">
+                
+            <ul class="list-group">
+            <li dir-paginate="job in jobLists.jobs | itemsPerPage: jobLists.perPage"
+                total-items="jobLists.jobCount" class="list-group-item ma-party-item table-hover" ng-click="jobLists.openJobModal(job._id)">
+              
+                <div class="row" style="cursor: pointer;">
+                    <div class="col-sm-8">
+                        <h4 class="ma-party-name">{{job.jobTitle}}</h4>
+
+                        <p class="ma-party-description">{{job.education}}</p>
+
+                        <p class="ma-party-description">{{job.experience}}</p>
+                    </div>
+                    <div class="col-sm-4">
+                    <h5>{{job.companyName}}</h5>                                
+                    
+                    </div>
+                </div>
+                <div class="row ma-party-item-bottom">
+                    <div class="col-sm-4 ma-posted-by-col">
+                        <span class="ma-posted-by">Posted by {{job.cvMail}}  </span>
+
+                    </div>
+                    <div class="col-sm-4 ma-posted-by-col">
+                        <span class="ma-posted-by">No. of  Vacancies {{job.noOfVacancies}} </span>
+                    </div>
+                    <div class="col-sm-4">
+                        <div >
+                            Deadline: {{job.deadline}}
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+            </div>
+            
+            <div class="panel-footer">
+  <dir-pagination-controls on-page-change="jobLists.pageChanged(newPageNumber)"></dir-pagination-controls>
+            </div>
+        </div>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- bd hotel jobs list page bottom -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:728px;height:90px"
+         data-ad-client="ca-pub-4759154202520671"
+         data-ad-slot="4847604142"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+      
+    </div>
+
+    <div class="col-md-2 h100">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- bd hotel jobs list page right -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4759154202520671"
+             data-ad-slot="8219872944"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <div class="rightAdd">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- bd hotel jobs list page right two -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-4759154202520671"
+                 data-ad-slot="9696606148"
+                 data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        <!-- <div style="float:left;width:100%!important;height:100%!important;margin:0px;padding:0px;">
+            <div style="float:left;width:160!important;height:300!important;margin:0px;padding:0px;"><a href="http://www.ajkerdeal.com/Product/222557/selfie-stick" target="_blank"><img src="http://www.ajkerdeal.com/Images/BdjBanner/Sky01.jpg" alt="deal image"></a></div><div style="float:left;width:160!important;height:300!important;margin:0px;padding:0px;"><a href="http://www.ajkerdeal.com/Product/224567/strawberry-dx-20-strawberry-sb102" target="_blank"><img src="http://www.ajkerdeal.com/Images/BdjBanner/Sky02.jpg" alt="deal image"></a></div></div> -->
+    </div>
+</div>
+
+<div class="hidden-sm" ng-include="'client/home/footer/foot-template.html'"></div>
+

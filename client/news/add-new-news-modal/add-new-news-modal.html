@@ -1,0 +1,36 @@
+<div class="container-fluid ma-add-new-job-container">
+    <div class="alert alert-info" ng-hide="addNewNewsModal.isLoggedIn">
+        Please log in to create a News and Event!
+    </div>
+
+    <form ng-show="addNewNewsModal.isLoggedIn">
+        <h2>Create a new News & Event</h2>
+
+        <div class="form-group">
+            <label for="nameInput">Heading</label>
+            <input ng-model="addNewNewsModal.newNews.heading" id="nameInput" type="text" class="form-control">
+        </div>
+         <div class="form-group">
+            <label for="summary">Summary</label>
+            <input ng-model="addNewNewsModal.newNews.summary" id="summary" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="url">URL</label>
+            <input ng-model="addNewNewsModal.newNews.url" id="url" type="text" class="form-control">
+        </div>       
+        <div class="form-group">
+            <label for="detail">Detail</label>
+            <textarea ng-model="addNewNewsModal.newNews.detail " id="detail" type="text" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="date">Date</label>
+            <input ng-model="addNewNewsModal.newNews.date" id="date" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="post">Posted By</label>
+            <input ng-model="addNewNewsModal.newNews.post" id="post" type="text" class="form-control">
+        </div>
+
+        <button ng-click="addNewNewsModal.addNewNews()" class="btn">Add News & Event</button>
+    </form>
+</div>

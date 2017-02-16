@@ -1,0 +1,7 @@
+<ul class="nav navbar-nav" style="cursor:pointer;">
+
+<li><a href="/login" ng-hide="socially.isLoggedIn">Login</a></li>
+<li><a href="/register" ng-hide="socially.isLoggedIn">Sign up</a></li>
+<li><a ng-show="socially.isLoggedIn">{{ socially.currentUser | displayName }}</a></li>
+<li><a ng-click="socially.logout()" ng-show="socially.isLoggedIn">Logout</a></li>
+</ul>            

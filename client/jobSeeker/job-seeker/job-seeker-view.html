@@ -1,0 +1,734 @@
+
+<div class="col-md-4 ma-parties-col">
+    <div class="list-group">
+    <a href="#" class="list-group-item active">
+        My Profile
+    </a>
+    <a href="/profileDetail/{{jobSeekerView.jobSeeker._id}}" class="list-group-item">View Resume</a>
+
+    <a href="./contact-us" class="list-group-item">Promote Myself</a>
+    <a href="./contact-us" class="list-group-item">Upgrade My Membership</a>
+    <!-- <a href="#" class="list-group-item">E-mail My Resume</a> -->
+</div>
+</div>
+
+<div class="col-md-8 ma-parties-col">
+    <div>
+        <div id="content">
+            <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+                <li class="active"><a href="#red" data-toggle="tab">Personal</a></li>
+                <li><a href="#orange" data-toggle="tab">Education Training</a></li>
+                <li><a href="#yellow" data-toggle="tab">Employment</a></li>
+                <li><a href="#green" data-toggle="tab">Other</a></li>
+                <li><a href="#blue" data-toggle="tab">Photograph</a></li>
+            </ul>
+            <div id="my-tab-content" class="tab-content">
+
+                <div class="tab-pane active" id="red">
+
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"> Personal</span>
+                            <span class="glyphicon glyphicon-pencil icon-bar" aria-hidden="true" data-toggle="modal" data-target="#mdlPersonal" style="float: right;">Add/Edit</span>
+                        </div>
+
+                        <div class="panel-body">
+
+                            <ul class="list-group">
+                                <li class="list-group-item"><label>Name : </label>{{jobSeekerView.jobSeeker.name}}</li>
+                                <li class="list-group-item"> <label>Father's Name : </label> {{jobSeekerView.jobSeeker.fatherName}}</li>
+                                <li class="list-group-item"><label>Mother's Name : </label>{{jobSeekerView.jobSeeker.motherName}}</li>
+                                <li class="list-group-item"><label>Date of Birth : </label>{{jobSeekerView.jobSeeker.dateOfBirth}}</li>
+                                <li class="list-group-item"><label>Gender : </label>{{jobSeekerView.jobSeeker.gender}}</li>
+                                <li class="list-group-item"><label>Marital Status : </label>{{jobSeekerView.jobSeeker.maritalStatus}}</li>
+                                <li class="list-group-item"><label>Nationality : </label>{{jobSeekerView.jobSeeker.nationality}}</li>
+                                <li class="list-group-item"><label>National Id No : </label>{{jobSeekerView.jobSeeker.nationaId}}</li>
+                                <li class="list-group-item"><label>Religion : </label>{{jobSeekerView.jobSeeker.religion}}</li>
+                                <li class="list-group-item"><label>Present Address : </label>{{jobSeekerView.jobSeeker.presentAddress}}</li>
+                                <li class="list-group-item"><label>Current Location : </label>{{jobSeekerView.jobSeeker.currentLocation}}</li>
+                                <li class="list-group-item"><label>Home Phone : </label>{{jobSeekerView.jobSeeker.homePhone}}</li>
+                                <li class="list-group-item"><label>Mobile : </label>{{jobSeekerView.jobSeeker.mobile}}</li>
+                                <li class="list-group-item"><label>Office Phone : </label>{{jobSeekerView.jobSeeker.officePhone}}</li>
+                                <li class="list-group-item"><label>Email : </label>{{jobSeekerView.jobSeeker.email}}</li>
+                                <li class="list-group-item"><label>Alternate Email : </label>{{jobSeekerView.jobSeeker.alternateEmail}}</li>
+
+                            </ul>
+
+                        </div>
+                        <div class="modal fade" id="mdlPersonal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Personal</h4>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <form>
+
+                                            <div class="form-group">
+                                                <label for="nameInput">Name</label>
+                                                <input ng-model="jobSeekerView.jobSeeker.name" id="nameInput" type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="fatherName">Father Name</label>
+                                                <input ng-model="jobSeekerView.jobSeeker.fatherName" id="fatherName" type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="motherName">Mother Name</label>
+                                                <input ng-model="jobSeekerView.jobSeeker.motherName" id="motherName" type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="dateOfBirth">Date Of Birth</label>
+                                                <input ng-model="jobSeekerView.jobSeeker.dateOfBirth" id="dateOfBirth" type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Gender </label>
+                                                <select ng-model="jobSeekerView.jobSeeker.gender" class="form-control" data-style="btn-primary">
+                                                    <option value="male">Male</option>
+                                                    <option value="female">Female</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label >Marital Status</label>
+                                                <select ng-model="jobSeekerView.jobSeeker.maritalStatus" class="form-control">
+                                                    <option value="married">Married</option>
+                                                    <option value="unmarried">Unmarried</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="nationality">Nationality</label>
+                                                <input ng-model="jobSeekerView.jobSeeker.nationality" id="nationality" type="text" class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="nationaId">National ID</label>
+                                                <input ng-model="jobSeekerView.jobSeeker.nationaId" id="nationaId" type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="religion">Religion</label>
+                                                <input ng-model="jobSeekerView.jobSeeker.religion" id="religion" type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="presentAddress">Present Address</label>
+                                                <input ng-model="jobSeekerView.jobSeeker.presentAddress" id="presentAddress" type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="currentLocation">Current Location</label>
+                                                <input ng-model="jobSeekerView.jobSeeker.currentLocation" id="currentLocation" type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="homePhone">Home Phone</label>
+                                                <input ng-model="jobSeekerView.jobSeeker.homePhone" id="homePhone" type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="mobile">Mobile</label>
+                                                <input ng-model="jobSeekerView.jobSeeker.mobile" id="mobile" type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="officePhone">Office Phone</label>
+                                                <input ng-model="jobSeekerView.jobSeeker.officePhone" id="officePhone" type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email">Email</label>
+                                                <input ng-model="jobSeekerView.jobSeeker.email" id="email" type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="alternateEmail">Alternate Email</label>
+                                                <input ng-model="jobSeekerView.jobSeeker.alternateEmail" id="alternateEmail" type="text" class="form-control">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" ng-click="jobSeekerView.update()" data-dismiss="modal">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">
+                            <span class="glyphicon glyphicon-education" aria-hidden="true"> Career and Application Information</span>
+                            <span class="glyphicon glyphicon-pencil icon-bar" aria-hidden="true" data-toggle="modal" data-target="#myModal" style="float: right;">Add/Edit</span>
+                        </div>
+                        <div class="panel-body">
+
+                            <ul class="list-group">
+                                <li class="list-group-item"><label>Objective : </label>{{jobSeekerView.jobSeeker.objective}}</li>
+                                <li class="list-group-item"> <label>Present Salary : </label> {{jobSeekerView.jobSeeker.presentSalary}}</li>
+                                <li class="list-group-item"><label>Expected Salary : </label>{{jobSeekerView.jobSeeker.expectedSalary}}</li>
+                                <li class="list-group-item"><label>Looking For : </label>{{jobSeekerView.jobSeeker.lookingFor}}</li>
+                                <li class="list-group-item"><label>Available For : </label>{{jobSeekerView.jobSeeker.availableFor}} Month</li>
+
+                            </ul>
+
+                        </div>
+                        <div>
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">Career and Application Information</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <label for="objective">Objective</label>
+                                                <input ng-model="jobSeekerView.jobSeeker.objective" id="objective" type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="presentSalary">Present Salary</label>
+                                                <input string-to-number ng-model="jobSeekerView.jobSeeker.presentSalary" id="presentSalary" type="number" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="expectedSalary">Expected Salary</label>
+                                                <input string-to-number ng-model="jobSeekerView.jobSeeker.expectedSalary" id="expectedSalary" type="number" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="lookingFor">Looking For</label>
+                                                <input ng-model="jobSeekerView.jobSeeker.lookingFor" id="lookingFor" type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Available For </label>
+                                                <select ng-model="jobSeekerView.jobSeeker.availableFor" class="form-control" data-style="btn-primary">
+                                                    <option value="1">1 Month</option>
+                                                    <option value="2">2 Month</option>
+                                                    <option value="3">3 Month</option>
+                                                    <option value="4">4 Month</option>
+                                                    <option value="5">5 Month</option>
+                                                    <option value="6">5 Month</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary" ng-click="jobSeekerView.update()" data-dismiss="modal">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">Preferred Areas
+                            <span class="glyphicon glyphicon-pencil icon-bar" aria-hidden="true" data-toggle="modal" data-target="#mdlPreferredAreas" style="float: right;">Add/Edit</span></div>
+                        <div class="panel-body">
+                            <ul class="list-group">
+                                <li class="list-group-item"><label>Job Category : </label>{{jobSeekerView.jobSeeker.jobCategory}}</li>
+                                <li class="list-group-item"> <label>Job Location(s) : </label> {{jobSeekerView.jobSeeker.jobLocation}}</li>
+                                <li class="list-group-item"><label>Organization Type(s) : </label>{{jobSeekerView.jobSeeker.orgType}}</li>
+                            </ul>
+                        </div>
+                        <div class="modal fade" id="mdlPreferredAreas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Preferred Areas</h4>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="form-group">
+                                            <label for="jobCategory">Job Category</label>
+                                            <input ng-model="jobSeekerView.jobSeeker.jobCategory" id="jobCategory" type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="jobLocation">Job Location</label>
+                                            <input ng-model="jobSeekerView.jobSeeker.jobLocation" id="jobLocation" type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="orgType">Organization Type</label>
+                                            <input ng-model="jobSeekerView.jobSeeker.orgType" id="orgType" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" ng-click="jobSeekerView.update()" data-dismiss="modal">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">Other Relevant Information
+                            <span class="glyphicon glyphicon-pencil icon-bar" aria-hidden="true" data-toggle="modal" data-target="#mdlReleventInformation" style="float: right;">Add/Edit</span>
+                        </div>
+                        <div class="panel-body">
+
+                            <ul class="list-group">
+                                <li class="list-group-item"><label>Career Summary : </label>{{jobSeekerView.jobSeeker.careerSummary}}</li>
+                                <li class="list-group-item"> <label>Special Qualification : </label> {{jobSeekerView.jobSeeker.specialQalification}}</li>
+                                <li class="list-group-item"><label>Total Year of Experience : </label>{{jobSeekerView.jobSeeker.keyword}} Year</li>
+
+                            </ul>
+
+                        </div>
+                        <div class="modal fade" id="mdlReleventInformation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Other Relevant Information</h4>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="form-group">
+                                            <label for="careerSummary">Career Summary</label>
+                                            <input ng-model="jobSeekerView.jobSeeker.careerSummary" id="careerSummary" type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="specialQalification">Special Qalification</label>
+                                            <input ng-model="jobSeekerView.jobSeeker.specialQalification" id="specialQalification" type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="keyword">Total Year of Experience</label>
+                                            <input string-to-number ng-model="jobSeekerView.jobSeeker.keyword" id="keyword" type="number" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" ng-click="jobSeekerView.update()" data-dismiss="modal">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="tab-pane" id="orange">
+
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">Academic Qualification
+                            <span class="glyphicon glyphicon-pencil icon-bar" aria-hidden="true" data-toggle="modal" data-target="#mdlAcademicQualification" style="float: right;">Add</span>
+                        </div>
+                        <div class="panel-body">
+                            <div>
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>Degree</th>
+                                        <th>Institute Name</th>
+                                        <th>Result</th>
+                                        <th>Year</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="qualification in jobSeekerView.jobSeeker.qualification">
+                                        <td>{{qualification.degreeTitle}}</td>
+                                        <td>{{qualification.instituteName}}</td>
+                                        <td>{{qualification.result}}</td>
+                                        <td>{{qualification.passingYear}}</td>
+                                        <td ng-click="jobSeekerView.removeQualification(qualification.degreeTitle)">
+                                            <span class="glyphicon glyphicon-trash icon-bar" aria-hidden="true" style="float: "></span>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+                        </div>
+                        <div class="modal fade" id="mdlAcademicQualification" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Academic Qualification</h4>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="form-group">
+                                            <label for="levelEduction">Level Eduction</label>
+                                            <input ng-model="jobSeekerView.jobSeeker.levelEduction" id="levelEduction" type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="degreeTitle">Degree Title</label>
+                                            <input ng-model="jobSeekerView.jobSeeker.degreeTitle" id="degreeTitle" type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="instituteName">Institute Name</label>
+                                            <input ng-model="jobSeekerView.jobSeeker.instituteName" id="instituteName" type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="result">Result</label>
+                                            <input ng-model="jobSeekerView.jobSeeker.result" id="result" type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="passingYear">Passing Year</label>
+                                            <input string-to-number ng-model="jobSeekerView.jobSeeker.passingYear" id="passingYear" type="number" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="duration">Duration</label>
+                                            <input ng-model="jobSeekerView.jobSeeker.duration" id="duration" type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="achievement">Achievement</label>
+                                            <input ng-model="jobSeekerView.jobSeeker.achievement" id="achievement" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" ng-click="jobSeekerView.updateQualification()" data-dismiss="modal">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">Training Summary
+                            <span class="glyphicon glyphicon-pencil icon-bar" aria-hidden="true" data-toggle="modal" data-target="#mdlTrainingSummary" style="float: right;">Add/Edit</span>
+                        </div>
+                        <div class="panel-body">
+
+                            <ul class="list-group">
+                                <li class="list-group-item"><label>Level of Education : </label>{{jobSeekerView.jobSeeker.trainingSummary}}</li>
+                            </ul>
+
+                        </div>
+                        <div class="modal fade" id="mdlTrainingSummary" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Training Summary</h4>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="form-group">
+                                            <label for="trainingSummary">Training Summary</label>
+                                            <input ng-model="jobSeekerView.jobSeeker.trainingSummary" id="trainingSummary" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" ng-click="jobSeekerView.update()" data-dismiss="modal">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">Professional Summary
+                            <span class="glyphicon glyphicon-pencil icon-bar" aria-hidden="true" data-toggle="modal" data-target="#mdlProfessional" style="float: right;">Add/Edit</span></div>
+                        <div class="panel-body">
+
+                            <ul class="list-group">
+                                <li class="list-group-item"><label>Level of Education : </label>{{jobSeekerView.jobSeeker.professionalSummary}}</li>
+
+                            </ul>
+
+                        </div>
+                        <div class="modal fade" id="mdlProfessional" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Professional Summary</h4>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="form-group">
+                                            <label for="professionalSummary">Professional Summary</label>
+                                            <input ng-model="jobSeekerView.jobSeeker.professionalSummary" id="professionalSummary" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" ng-click="jobSeekerView.update()" data-dismiss="modal">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="tab-pane" id="yellow">
+
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">Experience
+                            <span class="glyphicon glyphicon-pencil icon-bar" aria-hidden="true" data-toggle="modal" data-target="#mdlExperience" style="float: right;">Add</span></div>
+                        <div class="panel-body">
+                            <div>
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>Company Name</th>
+                                        <th>Position</th>
+                                        <th>From Date</th>
+                                        <th>To Date</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="experience in jobSeekerView.jobSeeker.experience">
+                                        <td>{{experience.companyName}}</td>
+                                        <td>{{experience.position}}</td>
+                                        <td>{{experience.fromDate}}</td>
+                                        <td>{{experience.toDate}}</td>
+                                        <td ng-click="jobSeekerView.removeExperience(experience.companyName)">
+                                            <span class="glyphicon glyphicon-trash icon-bar" aria-hidden="true" style="float: "></span>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="mdlExperience" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Experience</h4>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="form-group">
+                                            <label for="companyName">Company Name</label>
+                                            <input ng-model="jobSeekerView.jobSeeker.companyName" id="companyName" type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="position">Position</label>
+                                            <input ng-model="jobSeekerView.jobSeeker.position" id="position" type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="responsibility">Responsibility</label>
+                                            <input ng-model="jobSeekerView.jobSeeker.responsibility" id="responsibility" type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="fromDate">From Date</label>
+                                            <input ng-model="jobSeekerView.jobSeeker.fromDate" id="fromDate" type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="toDate">To Date</label>
+                                            <input ng-model="jobSeekerView.jobSeeker.toDate" id="toDate" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" ng-click="jobSeekerView.updateExperience()" data-dismiss="modal">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="tab-pane" id="green">
+
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">Language Proficiency
+                            <span class="glyphicon glyphicon-pencil icon-bar" aria-hidden="true" data-toggle="modal" data-target="#mdlLanguage" style="float: right;">Add</span></div>
+                        <div class="panel-body">
+                            <div>
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>Language</th>
+                                        <th>Reading</th>
+                                        <th>Writing</th>
+                                        <th>Speaking</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="language in jobSeekerView.jobSeeker.languages">
+                                        <td>{{language.language}}</td>
+                                        <td>{{language.reading}}</td>
+                                        <td>{{language.writing}}</td>
+                                        <td>{{language.speaking}}</td>
+                                        <td ng-click="jobSeekerView.removeLanguages(language.language)">
+                                            <span class="glyphicon glyphicon-trash icon-bar" aria-hidden="true" style="float:right;"></span>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="mdlLanguage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Language Proficiency</h4>
+                                    </div>
+                                    <div class="modal-body">                                    
+                                        <div class="form-group">
+                                            <label for="language">Language</label>
+                                            <input ng-model="jobSeekerView.jobSeeker.language" id="language" type="text" class="form-control">
+                                        </div>
+                                        <div class="form-inline-group">
+                                            <label>Reading</label>
+                                            <select ng-model="jobSeekerView.jobSeeker.reading" class="form-control">
+                                                <option value="low">low</option>
+                                                <option value="medium">medium</option>
+                                                <option value="high">high</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Writing</label>
+                                            <select ng-model="jobSeekerView.jobSeeker.writing"  class="form-control">
+                                                <option value="low">low</option>
+                                                <option value="medium">medium</option>
+                                                <option value="high">high</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Speaking</label>
+                                            <select ng-model="jobSeekerView.jobSeeker.speaking"  class="form-control">
+                                                <option value="low">low</option>
+                                                <option value="medium">medium</option>
+                                                <option value="high">high</option>
+                                            </select>
+                                        </div>                                       
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" ng-click="jobSeekerView.updateLanguages()" data-dismiss="modal">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">Reference
+                            <span class="glyphicon glyphicon-pencil icon-bar" aria-hidden="true" data-toggle="modal" data-target="#mdlReference" style="float: right;">Add</span></div>
+                        <div class="panel-body">
+                            <ul class="list-group" ng-repeat="reference in jobSeekerView.jobSeeker.reference">
+                                <div ng-click="jobSeekerView.removeReference(reference.refName)">
+                                <span class="glyphicon glyphicon-trash icon-bar" aria-hidden="true">
+                                    Remove
+                                </span></div>
+                                <li class="list-group-item"><label>Name : </label>{{reference.refName}}</li>
+                                <li class="list-group-item"> <label>Company : </label> {{reference.refCompany}}</li>
+                                <li class="list-group-item"><label>Designation : </label>{{reference.refDesignation}}</li>
+                                <li class="list-group-item"><label>Address : </label>{{reference.refAddress}}</li>
+                                <li class="list-group-item"><label>Mobile : </label>{{reference.refMobile}}</li>
+
+                            </ul>
+                        </div>
+                        <div class="modal fade" id="mdlReference" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Reference</h4>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="form-group">
+                                            <label for="refName">Reference Name</label>
+                                            <input ng-model="jobSeekerView.jobSeeker.refName" id="refName" type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="refCompany">Reference Company</label>
+                                            <input ng-model="jobSeekerView.jobSeeker.refCompany" id="refCompany" type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="refDesignation">Reference Designation</label>
+                                            <input ng-model="jobSeekerView.jobSeeker.refDesignation" id="refDesignation" type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="refAddress">Reference Address</label>
+                                            <input ng-model="jobSeekerView.jobSeeker.refAddress" id="refAddress" type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="refMobile">Reference Mobile</label>
+                                            <input ng-model="jobSeekerView.jobSeeker.refMobile" id="refMobile" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" ng-click="jobSeekerView.updateReference()" data-dismiss="modal">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="tab-pane" id="blue">
+
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">Photograph
+                            <span class="glyphicon glyphicon-pencil icon-bar" aria-hidden="true"></span>
+                        </div>
+                        <div class="panel-body">
+                            <div>
+                                <md-whiteframe class="md-whiteframe-z1" layout="column">
+                                  <div layout="row" class="images-container-title">
+                                    <div flex>
+                                      <h3>Add photos to your profile!</h3>
+                                        <div ng-hide="jobSeekerView.cropImgSrc" ngf-drop ngf-select
+                                             ngf-change="jobSeekerView.addImages($files)"
+                                             ngf-drag-over-class="{accept:'dragover', reject:'dragover-err', delay:100}" class="drop-box"
+                                             ngf-multiple="false" ngf-allow-dir="false" ngf-accept="'image/*'"
+                                             ngf-drop-available="true">
+                                          <div>Click here to select image</div>
+                                          <div>
+                                            <strong>OR</strong>
+                                          </div>
+                                          You can also drop image to here
+                                        </div>
+                                            <div ng-show="jobSeekerView.cropImgSrc" class="ng-crop-container">
+                                             <h3>Great! Now edit & crop your image...</h3>
+                                             <button type="button" ng-click="jobSeekerView.saveCroppedImage(jobSeekerView.jobSeeker._id)" ng-disabled="!jobSeekerView.cropImgSrc" class="md-primary">
+                                               Save Image
+                                             </button>
+                                             <img-crop image="jobSeekerView.cropImgSrc" result-image="jobSeekerView.myCroppedImage" area-type="square"></img-crop>
+                                            </div>
+                                          </div>
+                                        </div>
+                                       <br />
+                                       <div layout="row" class="images-container-title">
+                                         <div class="party-image-container" ng-if="jobSeekerView.jobSeeker.images && jobSeekerView.jobSeeker.images !== null">
+                                         <img ng-src="{{ jobSeekerView.getMainImage(jobSeekerView.jobSeeker.images) }}"/><br/>
+                                         <button ng-click="jobSeekerView.DeleteImage(jobSeekerView.jobSeeker.images,jobSeekerView.jobSeeker._id)" class="btn btn-primary">Delete image</button>
+                                        </div>
+
+                                      </div>
+
+                                </md-whiteframe>
+
+                            </div>
+
+                           
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,103 @@
+
+<div class="row h100">
+
+    <div class="col-md-12 ma-parties-col">
+        <div class="row">
+            <div class="col-xs-10">
+                <form class="form-inline search-form">
+
+                    <div class="form-group">
+                      <!--   <div class="input-group">
+                        
+                        <button ng-click="employeeList.searchAllJob()" class="btn btn-primary">ALL</button>
+                        </div> -->
+                        <div class="input-group">
+
+                            <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+                            <input type="text" ng-model="employeeList.inputCat" placeholder="Search by JobCategory" id="searchname"
+                                   class="form-control">
+                            <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" ng-click="employeeList.updatejobCategorySearch()">Go!/All</button></span>
+
+                                   <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+                            <input type="number" ng-model="employeeList.inputSal" placeholder="< salary" id="searchname"
+                                   class="form-control">
+                            <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" ng-click="employeeList.updateSalary()">Go!</button></span>      
+
+                                  <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+                            <input type="number" ng-model="employeeList.inputExp" placeholder="< Experience" id="searchname"
+                                   class="form-control">
+                            <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" ng-click="employeeList.updateExperience()">Go!</button></span>               
+                        </div>
+                        <div class="input-group">
+                                                   
+                        </div>
+                        
+                        <div class="input-group">
+                                                       
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="col-xs-2 ma-add-button-container">
+                <div class="form-group">
+                        <label class="sr-only" for="search">Page</label>
+
+                        <div class="input-group">
+                          <select class="form-control" ng-model="employeeList.perPage">
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                        </select>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>National ID</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                    <th>Experience </th>
+                    <th>Expected Salary</th>
+                    <th>Notice Period</th>                    
+                    <th>Prefered Job Category</th>                    
+                </tr>
+                </thead>
+                <tbody>
+                <tr dir-paginate="jobSeeker in employeeList.jobSeekers | itemsPerPage: employeeList.perPage" total-items="employeeList.jobSeekerCount" pagination-id="jobSeek" 
+                ui-sref="jobSeekerDetail({jobSeekerId: jobSeeker._id})">
+                    <td>{{jobSeeker.name}}</td>
+                    <td>{{jobSeeker.nationaId}}</td>
+                    <td>{{jobSeeker.mobile}}</td>                   
+                    <td>{{jobSeeker.email}}</td>
+                    <td>{{jobSeeker.keyword}} Year</td>
+                    <td>{{jobSeeker.expectedSalary}}</td>
+                    <td>{{jobSeeker.availableFor}} Month</td>
+                    <td>{{jobSeeker.jobCategory}}</td>
+                </tr>
+                </tbody>
+            </table>
+            <dir-pagination-controls pagination-id="jobSeek" on-page-change="employeeList.pageChanged(newPageNumber)"></dir-pagination-controls>
+        </div>
+        <div></div>
+ 
+    </div>
+
+</div>

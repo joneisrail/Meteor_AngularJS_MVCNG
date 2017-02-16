@@ -1,0 +1,137 @@
+
+<div class="row h100">
+
+    <div class="col-md-12 ma-parties-col">
+        <div class="row">
+            <div class="col-xs-11">
+                <form class="form-inline search-form">
+
+                    <div class="form-group">
+                        <label class="sr-only" for="search">Search</label>
+
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+                            <input type="text" ng-model="viewAllJob.searchInput" placeholder="Search" id="search" class="form-control">
+                            <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" ng-click="viewAllJob.updateSearch()">Go!</button>
+                          </span>
+                        </div>
+                        <button ng-click="viewAllJob.searchAllJob()" class="btn btn-primary">ALL</button>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" ng-model="viewAllJob.published" ng-change="viewAllJob.searchByPublished()">
+                            <option value="true">Published</option>
+                            <option value="false">Not Published</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Date</label>
+                        <select class="form-control" ng-model="viewAllJob.orderProperty" ng-change="viewAllJob.updateSort()">
+                            <option value="1">Ascending</option>
+                            <option value="-1">Descending</option>
+                        </select>
+                    </div>
+                     <div class="form-group">
+                        <!-- <label>Type</label> -->
+                        <select  class="form-control" ng-model="viewAllJob.jobType" ng-change="viewAllJob.searchByType()">
+                            <option value="0">Job Type</option>
+                            <option value="1">Full Time</option>
+                            <option value="2">Casual</option>
+                            <option value="3">Internship</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- <label>Type of job</label> -->
+                        <select  class="form-control" ng-model="viewAllJob.jobCategory" ng-change="viewAllJob.searchByjobCategory()">
+                            <option value="0">Job Category</option>
+                            <option value="1">Management Position</option>
+                            <option value="2">Front Office</option>
+                            <option value="3">Food & Beverage Production</option>
+                            <option value="4">Food & Beverage Service</option>
+                            <option value="5">Sales & Marketing</option>
+                            <option value="6">Housekeeping</option>
+                            <option value="7">Safety & Security</option>
+                            <option value="8">HR & Admin</option>
+                            <option value="9">Accounts</option>
+                            <option value="10">Purchase & Store </option>
+                            <option value="11">Engineereing & Maintenance</option>
+                            <option value="12">Airline & Tourism</option>
+                            <option value="13">Foreign Jobs</option>
+                            <option value="14">Others</option>
+                        </select>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="col-xs-1 ma-add-button-container">
+                 <!-- <div class="form-group">
+                        
+                        <div class="input-group">
+                          <select class="form-control" ng-model="viewAllJob.perPage">
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                        </select>
+                        </div>
+                    </div> -->
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Hot Jobs</h3>                 
+            </div>
+        
+            <div class="panel-body">
+
+        <ul class="list-group">           
+            <li pagination-id="alljobPg" dir-paginate="job in viewAllJob.jobs | itemsPerPage: viewAllJob.perPage" total-items="viewAllJob.jobCounting" class="list-group-item ma-party-item">
+                <i class="ma-remove fa fa-times" ng-click="viewAllJob.removeJob(job)"></i>
+
+                <div class="row">
+                    <div class="col-sm-9">
+                        <h4 class="ma-party-name"><a href="/jobs/{{job._id}}">{{job.jobTitle}}</a></h4>
+
+                        <p class="ma-party-description">{{job.education}}</p>
+                        <p class="ma-party-description">{{job.experience}}</p>
+                    </div>
+                    <div class="col-sm-2">
+                 <label>Publish : </label>  <input type="checkbox" ng-model="job.Public"><br>
+                            <button class="btn btn-primary" ng-click="viewAllJob.jobUpdate(job)">Update</button>
+            
+                    </div>
+                </div>
+                <div class="row ma-party-item-bottom">
+                    <div class="col-sm-4 ma-posted-by-col">
+                        <span class="ma-posted-by">Posted by: {{ viewAllJob.getJobCreator(job)| displayName}}  </span>
+
+                    </div>
+                    <div class="col-sm-4 ma-posted-by-col">
+                        <span class="ma-posted-by">Created At: {{job.createdAt.toDateString()}} </span>
+                    </div>
+                    <div class="col-sm-4">
+                        <div >
+                            Deadline: {{job.deadline}}
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        </div>
+        <div>Total Job count : {{viewAllJob.jobs.length}}: {{viewAllJob.jobCounting}}</div>
+            
+        <div class="panel-footer">
+            <dir-pagination-controls pagination-id="alljobPg" on-page-change="viewAllJob.pageChanged(newPageNumber)"></dir-pagination-controls>
+        </div>
+        </div>
+    </div>
+
+</div>

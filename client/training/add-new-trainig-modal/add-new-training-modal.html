@@ -1,0 +1,33 @@
+<div class="container-fluid ma-add-new-job-container">
+    <div class="alert alert-info" ng-hide="addNewTrainingModal.isLoggedIn">
+        Please log in to create a Training!
+    </div>
+
+    <form ng-show="addNewTrainingModal.isLoggedIn">
+        <h2>Create a new Training</h2>
+
+        <div class="form-group">
+            <label for="nameInput">Heading</label>
+            <input ng-model="addNewTrainingModal.newTraining.heading" id="nameInput" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="date">Date</label>
+            <input ng-model="addNewTrainingModal.newTraining.date" id="date" type="text" class="form-control">
+        </div>
+        
+        <div class="form-group">
+            <label for="trainer">Trainer Detail</label>
+            <input ng-model="addNewTrainingModal.newTraining.trainer" id="trainer" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="summary">Summary</label>
+            <input ng-model="addNewTrainingModal.newTraining.summary" id="summary" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="detail">Detail</label>
+            <textarea ng-model="addNewTrainingModal.newTraining.detail " id="detail" type="text" class="form-control"></textarea>
+        </div>
+
+        <button ng-click="addNewTrainingModal.addNewTraining()" class="btn">Add Training</button>
+    </form>
+</div>

@@ -1,0 +1,67 @@
+
+<div class="row h100">
+
+    <div class="col-md-12 ma-parties-col">
+        <div class="row">
+            <div class="col-xs-8">
+                <form class="form-inline search-form">
+
+                    <div class="form-group">
+                        <label class="sr-only" for="search">Search</label>
+
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+                            <input type="text" ng-model="jobSeekerList.searchText" placeholder="Search by name" id="search by jobseeker name"
+                                   class="form-control">
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="col-xs-4 ma-add-button-container">
+                <button ng-show="jobSeekerList.isLoggedIn" class="btn" ui-sref="jobSeekerView({ jobSeekerId: jobSeeker._id })">
+                    <i class="fa fa-plus"></i></button>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>National ID</th>
+                    <th>Mobile</th>
+                    <th>DOB</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Father Name</th>
+                    <th>Present Address</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr dir-paginate="jobSeeker in jobSeekerList.jobSeekers | itemsPerPage: jobSeekerList.perPage" total-items="jobSeekerList.jobSeekerCount" pagination-id="jobSeek" 
+                ui-sref="jobSeekerView({jobSeekerId: jobSeeker._id})">
+                    <td>{{jobSeeker.name}}</td>
+                    <td>{{jobSeeker.nationaId}}</td>
+                    <td>{{jobSeeker.mobile}}</td>
+                    <td>{{jobSeeker.dateOfBirth}}</td>
+                    <td>{{jobSeeker.email}}</td>
+                    <td>{{jobSeeker.gender}}</td>
+                    <td>{{jobSeeker.fatherName}}</td>
+                    <td>{{jobSeeker.presentAddress}}</td>
+                    <td>
+                        <span class="glyphicon glyphicon-pencil icon-bar" aria-hidden="true" style="float: "></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <dir-pagination-controls pagination-id="jobSeek" on-page-change="jobSeekerList.pageChanged(newPageNumber)"></dir-pagination-controls>
+        </div>
+        <div><button class="btn btn-primary" ng-click="jobSeekerList.downloadPdf()">Download PDF</button></div>
+ 
+    </div>
+
+</div>
